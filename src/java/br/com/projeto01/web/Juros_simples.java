@@ -41,7 +41,25 @@ public class Juros_simples extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Juros Simples</h1>");
+            out.println("<h3>A Formula a ser utilizada é <abbr title='JUROS'>J</abbr> = <abbr title='CAPITAL INICIAL'>C</abbr>"
+                    + ".<abbr title='TAXA DE JUROS AO MES'>i</abbr>"+".<abbr title='TEMPO'>t</abbr></h3>");
             
+            out.println("<div style='border: 2px solid; width: 230px; padding: 10px;'>");
+            out.println("<h3>J = Juros a ser descoberto<br/>C = Capital Inicial <br/>i = taxa de juros ao mes<br/>t = tempo do capital investido");
+            out.println("</div></br></br>");
+            
+            out.println("<form>");
+            out.println("<fieldset style='width:500px'>");
+            out.println("<legend style='font-size:22px;'><b>Informe os seguintes dados:</legend>");
+            out.println("</br><b>Capital Inicial (C):</b>");
+            out.println("<input type='number' name='capital' step='any' min='0' ></br></br>");
+            out.println("<b>Taxa de juros ao mes % (i):</b>");
+            out.println("<input type='number' name='taxa' step='any' min='0' ></br></br>");
+            out.println("<b>Tempo da aplicacao em meses (t):</b>");
+            out.println("<input type='number' name='n' step='any'  min='0' ></br></br>");
+            out.println("<input type='submit' value='Calcular'></br></br>");
+            out.println("</fieldset>");
+            out.println("</form></br></br>");
             
             out.println("<h4><a href='index.html'>Voltar</a></h4>");
             out.println("</body>");
