@@ -45,7 +45,7 @@ public class Juros_simples extends HttpServlet {
                     + ".<abbr title='TAXA DE JUROS AO MES'>i</abbr>"+".<abbr title='TEMPO'>t</abbr></h3>");
             
             out.println("<div style='border: 2px solid; width: 230px; padding: 10px;'>");
-            out.println("<h3>J = Juros a ser descoberto<br/>C = Capital Inicial <br/>i = taxa de juros ao mes<br/>t = tempo do capital investido");
+            out.println("<h3>J = Juros a ser descoberto<br/>C = Capital Inicial <br/>i = taxa de juros ao mes<br/>t = tempo da aplicação");
             out.println("</div></br></br>");
             
             out.println("<form>");
