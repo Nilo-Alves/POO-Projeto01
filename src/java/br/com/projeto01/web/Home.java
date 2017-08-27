@@ -47,7 +47,7 @@ public class Home extends HttpServlet {
             out.println("<tr><th>Nome</th><th>RA</th></tr>");
             out.println("<tr><th>Marcus Vinicius</th><th>1290481613049</th></tr>");
             out.println("<tr><th>Nilo Francisco</th><th>1290481613049</th></tr>");
-            out.println("<tr><th>Rafael dos Santos</th><th>1290481613049</th></tr>");
+            out.println("<tr><th>Rafael dos Santos</th><th>1290371423035</th></tr>");
             out.println("<tr><th>Victor Hugo</th><th>1290481613049</th></tr>");
             out.println("<tr><th>Vinicius Loreto</th><th>1290481613043</th></tr>");
             out.println("</table>");
