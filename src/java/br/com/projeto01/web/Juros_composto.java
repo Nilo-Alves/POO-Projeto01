@@ -59,7 +59,7 @@ public class Juros_composto extends HttpServlet {
             out.println("<input type='number' name='capital' step='any' min='0' ></br></br>");
             out.println("<b>Taxa de juros ao mes % (i):</b>");
             out.println("<input type='number' name='taxa' step='any' min='0' ></br></br>");
-            out.println("<b>Quantidade de meses da aplicacao (n):</b>");
+            out.println("<b>Quantidade de meses da aplicação (n):</b>");
             out.println("<input type='number' name='n' step='any'  min='0' ></br></br>");
             out.println("<input type='submit' value='Calcular'></br></br>");
             out.println("</fieldset>");
@@ -90,7 +90,7 @@ public class Juros_composto extends HttpServlet {
             for(int h=0; h<=n;h++){
                 out.println("<tr style='border: 1px solid black; border-collapse: collapse'>");
                 out.println("<td style='border: 1px solid black; border-collapse: collapse'>"+h+"</td>");
-                montante = Double.valueOf(formato.format(montante).replace(',','.'));//Coloca a variavel montante somente com 2 casas depois da virgula.
+                montante = Double.valueOf(formato.format(montante).replace(',','.'));
                 out.println("<td style='border: 1px solid black; border-collapse: collapse'>R$"+formato.format(montante)+"</td>");
                 out.println("</tr>");
                 montante = (montante*(taxa/100))+montante;
@@ -100,7 +100,7 @@ public class Juros_composto extends HttpServlet {
             
             out.println("<table style='border: 1px solid black; border-collapse: collapse'>");
             out.println("<tr style='border: 1px solid black; border-collapse: collapse'>");
-            out.println("<th>Total de Juros da aplicacao</th>");
+            out.println("<th>Total de Juros da Aplicação</th>");
             out.println("</tr>");
             out.println("<tr>");
             out.println("<td> R$"+formato.format(juros)+"</td>");
