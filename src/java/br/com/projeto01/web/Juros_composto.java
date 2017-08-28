@@ -56,15 +56,15 @@ public class Juros_composto extends HttpServlet {
             out.println("<fieldset style='width:500px'>");
             out.println("<legend style='font-size:22px;'><b>Informe os seguintes dados:</legend>");
             out.println("</br><b>Capital Inicial (C):</b>");
-            out.println("<input type='text' name='capital'></br></br>");
+            out.println("<input type='number' name='capital' step='any' min='0' ></br></br>");
             out.println("<b>Taxa de juros ao mes % (i):</b>");
-            out.println("<input type='text' name='taxa'></br></br>");
+            out.println("<input type='number' name='taxa' step='any' min='0' ></br></br>");
             out.println("<b>Quantidade de meses da aplicacao (n):</b>");
-            out.println("<input type='text' name='n'></br></br>");
+            out.println("<input type='number' name='n' step='any'  min='0' ></br></br>");
             out.println("<input type='submit' value='Calcular'></br></br>");
             out.println("</fieldset>");
             out.println("</form></br></br>");
-            out.println("<h4><a href='home.php'>Voltar</a></h4>");
+            
             
             double montante,capital,taxa,juros,n,aux;
             n = parseDouble(request.getParameter("n"));
@@ -72,7 +72,7 @@ public class Juros_composto extends HttpServlet {
             capital = parseDouble(request.getParameter("capital"));
             aux = Math.pow((1+(taxa/100)), n);
             juros = capital*(aux-1);
-            montante = capital + juros;  
+            montante = capital;  
             //Jeito que eu achei para colocar somente 2 casas depois da virgula.
             DecimalFormat formato = new DecimalFormat("#.00");
             //capital = Double.valueOf(formato.format(capital));
@@ -108,7 +108,7 @@ public class Juros_composto extends HttpServlet {
             out.println("</table></br></br>");
             
             
-            
+            out.println("<h4><a href='home.php'>Voltar</a></h4>");
                     
             
             out.println("</body>");
