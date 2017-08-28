@@ -56,11 +56,11 @@ public class Juros_composto extends HttpServlet {
             out.println("<fieldset style='width:500px'>");
             out.println("<legend style='font-size:22px;'><b>Informe os seguintes dados:</legend>");
             out.println("</br><b>Capital Inicial (C):</b>");
-            out.println("<input type='number' name='capital' step='any' min='0' ></br></br>");
+            out.println("<input type='text' name='capital'></br></br>");
             out.println("<b>Taxa de juros ao mes % (i):</b>");
-            out.println("<input type='number' name='taxa' step='any' min='0' ></br></br>");
+            out.println("<input type='text' name='taxa'></br></br>");
             out.println("<b>Quantidade de meses da aplicacao (n):</b>");
-            out.println("<input type='number' name='n' step='any'  min='0' ></br></br>");
+            out.println("<input type='text' name='n'></br></br>");
             out.println("<input type='submit' value='Calcular'></br></br>");
             out.println("</fieldset>");
             out.println("</form></br></br>");
@@ -72,16 +72,15 @@ public class Juros_composto extends HttpServlet {
             capital = parseDouble(request.getParameter("capital"));
             aux = Math.pow((1+(taxa/100)), n);
             juros = capital*(aux-1);
-            montante = capital;
-            
+            montante = capital + juros;  
             //Jeito que eu achei para colocar somente 2 casas depois da virgula.
-            DecimalFormat formato = new DecimalFormat("#.##");
-            capital = Double.valueOf(formato.format(capital));
-            juros = Double.valueOf(formato.format(juros));
-            taxa = Double.valueOf(formato.format(taxa));
-            n = Double.valueOf(formato.format(n));
-            aux = Double.valueOf(formato.format(aux));
-            
+            DecimalFormat formato = new DecimalFormat("#.00");
+            //capital = Double.valueOf(formato.format(capital));
+            //juros = Double.valueOf(formato.format(juros));
+            //taxa = Double.valueOf(formato.format(taxa));
+            //n = Double.valueOf(formato.format(n));
+            //aux = Double.valueOf(formato.format(aux));
+                    
                 
             out.println("<table style='border: 1px solid black; border-collapse: collapse'>");
             out.println("<tr>");
@@ -91,8 +90,8 @@ public class Juros_composto extends HttpServlet {
             for(int h=0; h<=n;h++){
                 out.println("<tr style='border: 1px solid black; border-collapse: collapse'>");
                 out.println("<td style='border: 1px solid black; border-collapse: collapse'>"+h+"</td>");
-                montante = Double.valueOf(formato.format(montante));//Coloca a variavel montante somente com 2 casas depois da virgula.
-                out.println("<td style='border: 1px solid black; border-collapse: collapse'>"+montante+"</td>");
+                montante = Double.valueOf(formato.format(montante).replace(',','.'));//Coloca a variavel montante somente com 2 casas depois da virgula.
+                out.println("<td style='border: 1px solid black; border-collapse: collapse'>R$"+formato.format(montante)+"</td>");
                 out.println("</tr>");
                 montante = (montante*(taxa/100))+montante;
             }
@@ -104,7 +103,7 @@ public class Juros_composto extends HttpServlet {
             out.println("<th>Total de Juros da aplicacao</th>");
             out.println("</tr>");
             out.println("<tr>");
-            out.println("<td>"+juros+"</td>");
+            out.println("<td> R$"+formato.format(juros)+"</td>");
             out.println("</tr>");
             out.println("</table></br></br>");
             
