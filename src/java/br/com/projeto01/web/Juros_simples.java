@@ -8,6 +8,7 @@ package br.com.projeto01.web;
 import java.io.IOException;
 import java.io.PrintWriter;
 import static java.lang.Double.parseDouble;
+import java.text.DecimalFormat;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -56,15 +57,17 @@ public class Juros_simples extends HttpServlet {
             out.println("<input type='number' name='capital' step='any' min='0' ></br></br>");
             out.println("<b>Taxa de juros ao mes % (i):</b>");
             out.println("<input type='number' name='taxa' step='any' min='0' ></br></br>");
-            out.println("<b>Tempo da aplicacao em meses (t):</b>");
+            out.println("<b>Tempo da aplicação em meses (t):</b>");
             out.println("<input type='number' name='t' step='any'  min='0' ></br></br>");
             out.println("<input type='submit' value='Calcular'></br></br>");
+            out.println("</form>");
             
              double C,i,j,t;
-             t = parseDouble(request.getParameter("tempo"));
+             DecimalFormat formato = new DecimalFormat("#.00");
+             t = parseDouble(request.getParameter("t"));
              i = parseDouble(request.getParameter("taxa"));
              C = parseDouble(request.getParameter("capital"));
-            
+             i=i/100;
              j = C*i*t;
              
             
@@ -73,10 +76,10 @@ public class Juros_simples extends HttpServlet {
              
              out.println("<table style='border: 1px solid black; border-collapse: collapse'>");
              out.println("<tr style='border: 1px solid black; border-collapse: collapse'>");
-             out.println("<th>Total de Juros da aplicacao</th>");
+             out.println("<th>Total de Juros da Aplicação</th>");
              out.println("</tr>");
              out.println("<tr>");
-             out.println("<td>"+j+"</td>");
+             out.println("<td> R$"+formato.format(j)+"</td>");
              out.println("</tr>");
              out.println("</table></br></br>");
             
