@@ -7,6 +7,7 @@ package br.com.projeto01.web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.Double.parseDouble;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -56,10 +57,29 @@ public class Juros_simples extends HttpServlet {
             out.println("<b>Taxa de juros ao mes % (i):</b>");
             out.println("<input type='number' name='taxa' step='any' min='0' ></br></br>");
             out.println("<b>Tempo da aplicacao em meses (t):</b>");
-            out.println("<input type='number' name='n' step='any'  min='0' ></br></br>");
+            out.println("<input type='number' name='t' step='any'  min='0' ></br></br>");
             out.println("<input type='submit' value='Calcular'></br></br>");
-            out.println("</fieldset>");
-            out.println("</form></br></br>");
+            
+             double C,i,j,t;
+             t = parseDouble(request.getParameter("tempo"));
+             i = parseDouble(request.getParameter("taxa"));
+             C = parseDouble(request.getParameter("capital"));
+            
+             j = C*i*t;
+             
+            
+             out.println("</table></br></br>");   
+             
+             
+             out.println("<table style='border: 1px solid black; border-collapse: collapse'>");
+             out.println("<tr style='border: 1px solid black; border-collapse: collapse'>");
+             out.println("<th>Total de Juros da aplicacao</th>");
+             out.println("</tr>");
+             out.println("<tr>");
+             out.println("<td>"+j+"</td>");
+             out.println("</tr>");
+             out.println("</table></br></br>");
+            
             
             out.println("<h4><a href='home.php'>Voltar</a></h4>");
             out.println("</body>");
