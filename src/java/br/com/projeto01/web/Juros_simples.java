@@ -61,7 +61,7 @@ public class Juros_simples extends HttpServlet {
             out.println("</fieldset>");
             out.println("</form></br></br>");
             
-            out.println("<h4><a href='index.html'>Voltar</a></h4>");
+            out.println("<h4><a href='home.php'>Voltar</a></h4>");
             out.println("</body>");
             out.println("</html>");
         }

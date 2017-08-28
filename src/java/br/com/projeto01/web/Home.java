@@ -55,7 +55,6 @@ public class Home extends HttpServlet {
             out.println("<h2>Aplicação</h2>");
             out.println("<h2><a href='juros_simples.php'>Juros Simples</a></h2>");
             out.println("<h2><a href='juros_composto.php'>Juros Composto</a></h2>");
-            out.println("<h4><a href='index.html'>Voltar</a></h4>");
             out.println("</body>");
             out.println("</html>");
         }

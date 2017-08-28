@@ -64,6 +64,7 @@ public class Juros_composto extends HttpServlet {
             out.println("<input type='submit' value='Calcular'></br></br>");
             out.println("</fieldset>");
             out.println("</form></br></br>");
+            out.println("<h4><a href='home.php'>Voltar</a></h4>");
             
             double montante,capital,taxa,juros,n,aux;
             n = parseDouble(request.getParameter("n"));
@@ -110,7 +111,7 @@ public class Juros_composto extends HttpServlet {
             
             
                     
-            out.println("<h4><a href='home.php'>Voltar</a></h4>");
+            
             out.println("</body>");
             out.println("</html>");
         }
