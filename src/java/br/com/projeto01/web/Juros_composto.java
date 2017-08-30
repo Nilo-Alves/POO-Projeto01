@@ -105,6 +105,7 @@ public class Juros_composto extends HttpServlet {
             out.println("<tr>");
             out.println("<td> R$"+formato.format(juros)+"</td>");
             out.println("</tr>");
+            out.println("<tr style='border: 1px solid black; border-collapse: collapse'><td>Taxa de juros: "+taxa+"%</td></tr>");
             out.println("</table></br></br>");
             
             

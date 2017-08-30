@@ -40,21 +40,21 @@ public class Home extends HttpServlet {
             out.println("<title>Servlet Home</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Apresentação</h1>");
+            out.println("<h1 align='center'>Apresentação</h1>");
             
-            out.println("<h2>Equipe</h2>");
-            out.println("<table>");
+            out.println("<h2 align='center'>Equipe</h2>");
+            out.println("<table align='center'>");
             out.println("<tr><th>Nome</th><th>RA</th></tr>");
-            out.println("<tr><th>Marcus Vinicius</th><th>1290481613049</th></tr>");
+            //out.println("<tr><th>Marcus Vinicius</th><th>1290481613049</th></tr>");
             out.println("<tr><th>Nilo Francisco</th><th>1290481613049</th></tr>");
             out.println("<tr><th>Rafael dos Santos</th><th>1290371423035</th></tr>");
-            out.println("<tr><th>Victor Hugo</th><th>1290481613049</th></tr>");
+            out.println("<tr><th>Victor Hugo</th><th>1290481613042</th></tr>");
             out.println("<tr><th>Vinicius Loreto</th><th>1290481613043</th></tr>");
             out.println("</table>");
             
-            out.println("<h2>Aplicação</h2>");
-            out.println("<h2><a href='juros_simples.php'>Juros Simples</a></h2>");
-            out.println("<h2><a href='juros_composto.php'>Juros Composto</a></h2>");
+            out.println("<h2 align='center'>Aplicação</h2>");
+            out.println("<h2 align='center'><a href='juros_simples.php'>Juros Simples</a></h2>");
+            out.println("<h2 align='center'><a href='juros_composto.php'>Juros Composto</a></h2>");
             out.println("</body>");
             out.println("</html>");
         }
